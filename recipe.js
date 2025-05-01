@@ -20,25 +20,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("recipe-nutrients").innerText = recipe.nutrients;
                 document.getElementById("recipe-source").innerText = recipe.source;
 
-                // Create JSON-LD metadata
-                "@context": "https://schema.org",
+                 // Create JSON-LD metadata
+                const jsonLd = {
+                    "@context": "https://schema.org/",
                     "@type": "Recipe",
-                    "name": recipe["RECIPE NAME"],
-                    "recipeIngredient": recipe["INGREDIENTS"].split("    "), // assumes ingredients are space-separated
-                    "recipeCategory": recipe["MEAL TYPE"],
-                    "totalTime": `${recipe["COOKING TIME (MINUTES)"]} minutes`,
-                    "image": recipe["IMAGE"],
-                    "url": window.location.href,
-                    "mainEntityOfPage": window.location.href,
-                    "nutrition": {
-                        "@type": "NutritionInformation",
-                        "name": recipe["PRIMARY NUTRIENTS"]
-                    },
-                    "estimatedCost": {
-                        "@type": "MonetaryAmount",
-                        "currency": "USD",
-                        "value": recipe["COST ESTIMATE ($-$$$)"]
-                    }
+                    "name": recipe.title,
+                    "recipeIngredient": recipe.ingredients,
+                    "recipeCategory": recipe.type,
+                    "nutrition": recipe.nutrients,
+                    "@type": "HowTo",
+                    "estimatedCost": recipe.cost,
+                    "totalTime": recipe.time,
+                    "@type": "CreativeWork",
+                    "archivedAt": recipe.source,
+                    "accessMode": recipe.energy,
+                    "@type": "Thing",
+                    "image": images/${recipe.image},
                 };
 
                 // Insert JSON-LD into the <head> of the document
