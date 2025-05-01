@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const recipeId = urlParams.get('id');
 
-    fetch("collection.json")
+    fetch("Kayla Ahrndt- DSC 2030 Digital Repository Data.json")
         .then(response => response.json())
         .then(data => {
             const recipe = data.find(recipe => recipe.id === recipeId);
