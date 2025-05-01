@@ -9,16 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
             if (recipe) {
 
                 // Update visible page content
-                document.getElementById("recipe-title").innerText = recipe.title;
-                document.getElementById("recipe-image").src = `images/${recipe.image}`;
-                document.getElementById("recipe-name").innerText = recipe.name;
-                document.getElementById("recipe-ingredients").innerText = recipe.ingredients;
-                document.getElementById("recipe-time").innerText = recipe.time;
-                document.getElementById("recipe-energy").innerText = recipe.energy;
-                document.getElementById("recipe-cost").innerText = recipe.cost;
-                document.getElementById("recipe-type").innerText = recipe.type;
-                document.getElementById("recipe-nutrients").innerText = recipe.nutrients;
-                document.getElementById("recipe-source").innerText = recipe.source;
+                document.getElementById("recipe-title").innerText = recipe["RECIPE NAME"];
+                document.getElementById("recipe-image").src = recipe["IMAGE"];
+                document.getElementById("recipe-image").alt = recipe["RECIPE NAME"];
+                document.getElementById("recipe-name").innerText = recipe["RECIPE NAME"];
+                document.getElementById("recipe-ingredients").innerText = recipe["INGREDIENTS"];
+                document.getElementById("recipe-time").innerText = recipe["COOKING TIME (MINUTES)"];
+                document.getElementById("recipe-energy").innerText = recipe["ENERGY/DIFFICULTY (1-5)"];
+                document.getElementById("recipe-cost").innerText = recipe["COST ESTIMATE ($-$$$)"];
+                document.getElementById("recipe-type").innerText = recipe["MEAL TYPE"];
+                document.getElementById("recipe-nutrients").innerText = recipe["PRIMARY NUTRIENTS"];
+                document.getElementById("recipe-source").innerHTML = `<a href="${recipe["SOURCE"]}" target="_blank">${recipe["SOURCE"]}</a>`;
 
                  // Create JSON-LD metadata
                 const jsonLd = {
