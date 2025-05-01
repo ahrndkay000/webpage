@@ -10,8 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         <img src="${recipe.IMAGE}" alt="${recipe['RECIPE NAME']}" width="200">
                         <h2>${recipe['RECIPE NAME']}</h2>
                         <p><strong>Cooking Time:</strong> ${recipe['COOKING TIME (MINUTES)']} minutes</p>
-                        <p><strong>Difficulty:</strong> ${recipe['ENERGY/DIFFICULTY (1-5)']} / 5</p>
+                        <p><strong>Energy:</strong> ${recipe['ENERGY/DIFFICULTY (1-5)']} / 5</p>
                         <p><strong>Cost Estimate:</strong> ${recipe['COST ESTIMATE ($-$$$)']}</p>
+                        <p><strong>Meal Type:</strong> ${recipe['MEAL TYPE']}</p>
+                        <p><strong>Primary Nutrients:</strong> ${recipe['PRIMARY NUTRIENTS']}</p>
                         <a href="${recipe.SOURCE}" target="_blank">View Full Recipe</a>
                     </div>
                 `;
