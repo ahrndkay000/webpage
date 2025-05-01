@@ -12,3 +12,13 @@ h1{
 p{
   font-size: 14px;
 }
+
+main:before  {
+       width: auto;
+       margin-bottom: 25px;
+       border: #8c9bfa;
+       height: 200px;
+       display: block;
+       content: "";
+       box-shadow: ;
+}
