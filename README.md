@@ -27,10 +27,10 @@ INGREDIENTS
 - List format with 3 spaces between ingredients
 COOKING TIME (MINUTES)
 - Prep + cooking time in minutes
-ENERGY/DIFFICULTY (1-5)
+ENERGY/DIFFICULTY (1 - 5)
 - 1-5 scale of the amount of difficulty or energy it may take to make, as determined by the author while reading the instructions
-COST ESTIMATE ($-$$$)
-- $-$$$ USD scale based on recipe author or site author's estimate
+COST ESTIMATE ($ - $$$)
+- $ - $$$ USD scale based on recipe author or site author's estimate
 MEAL TYPE
 - List format with 3 spaces between meal types
   - 'meal', 'meal prep', 'side', 'gf', 'breakfast', 'dessert', 'soup', 'pasta', 'special occasion'
