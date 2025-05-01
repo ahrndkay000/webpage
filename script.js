@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p><a href="recipe-template.html?name=${encodeURIComponent(recipe["RECIPE NAME"])}">View Recipe</a></p>
                 `;
                 container.appendChild(div);
-                
             });
         })
         .catch(error => console.error("Error loading JSON:", error));
 });
+
