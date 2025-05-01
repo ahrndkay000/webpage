@@ -1,15 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("collection.json") // Load the JSON file
-        .then(response => response.json()) // Convert response to JavaScript object
+    fetch("collection.json")
+        .then(response => response.json())
         .then(data => {
-            const container = document.getElementById("collection"); // Find the container in HTML
-            data.forEach(recipe => { // Loop through each item in the JSON file
-                let div = document.createElement("div"); // Create a new div for each item
+            const container = document.getElementById("collection");
+            data.forEach(recipe => {
+                let div = document.createElement("div");
                 div.innerHTML = `
-                    <h2>${recipe.title}</h2>
-                    <a href="item-template.html?id=${recipe.id}">View More</a>`; // Insert item data and link
-                container.appendChild(div); // Add item to the page
+                    <div class="recipe-card">
+                        <img src="${recipe.IMAGE}" alt="${recipe['RECIPE NAME']}" width="200">
+                        <h2>${recipe['RECIPE NAME']}</h2>
+                        <p><strong>Cooking Time:</strong> ${recipe['COOKING TIME (MINUTES)']} minutes</p>
+                        <p><strong>Difficulty:</strong> ${recipe['ENERGY/DIFFICULTY (1-5)']} / 5</p>
+                        <p><strong>Cost Estimate:</strong> ${recipe['COST ESTIMATE ($-$$$)']}</p>
+                        <a href="${recipe.SOURCE}" target="_blank">View Full Recipe</a>
+                    </div>
+                `;
+                container.appendChild(div);
             });
         })
-        .catch(error => console.error("Error loading JSON:", error)); // Show errors if loading fails
+        .catch(error => console.error("Error loading JSON:", error));
 });
