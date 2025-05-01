@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("Kayla Ahrndt- DSC 2030 Digital Repository Data.json") // Load the JSON file
+    fetch("collection.json") // Load the JSON file
         .then(response => response.json()) // Convert response to JavaScript object
         .then(data => {
-            const container = document.getElementById("Kayla Ahrndt- DSC 2030 Digital Repository Data"); // Find the container in HTML
-            data.forEach(item => { // Loop through each item in the JSON file
+            const container = document.getElementById("collection"); // Find the container in HTML
+            data.forEach(recipe => { // Loop through each item in the JSON file
                 let div = document.createElement("div"); // Create a new div for each item
                 div.innerHTML = `
                     <h2>${recipe.title}</h2>
-                    <a href="item-template.html?id=${item.id}">View More</a>
-                `; // Insert item data and link
+                    <a href="item-template.html?id=${recipe.id}">View More</a>`; // Insert item data and link
                 container.appendChild(div); // Add item to the page
             });
         })
