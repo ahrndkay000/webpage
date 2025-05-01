@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const recipeId = urlParams.get('id');
+    const recipeName = urlParams.get('name');  // Get 'name' from the query parameter
 
     fetch("collection.json")
         .then(response => response.json())
         .then(data => {
-            const recipe = data.find(r => r['RECIPE NAME'] === recipeName);
+            // Search for the recipe based on RECIPE NAME
+            const recipe = data.find(r => r["RECIPE NAME"] === recipeName);
+            
             if (recipe) {
-
                 // Update visible page content
                 document.getElementById("recipe-title").innerText = recipe["RECIPE NAME"];
                 document.getElementById("recipe-image").src = recipe["IMAGE"];
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("recipe-nutrients").innerText = recipe["PRIMARY NUTRIENTS"];
                 document.getElementById("recipe-source").innerHTML = `<a href="${recipe["SOURCE"]}" target="_blank">${recipe["SOURCE"]}</a>`;
 
-                 // Create JSON-LD metadata
+                // Create JSON-LD metadata
                 const jsonLd = {
                     "@context": "https://schema.org",
                     "@type": "Recipe",
@@ -50,5 +51,3 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Error loading JSON:", error));
 });
-
-
