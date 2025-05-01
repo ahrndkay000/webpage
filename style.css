@@ -2,11 +2,11 @@ body {
   font-family: "Garamond", serif;
   background-color: #9CCC65;
   text-align: center;
-  color: #6B8849;
+  color: black;
 }
 
 h1{
-  color = black;
+  color = #6B8849;
 }
 
 p{
