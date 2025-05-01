@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const recipeId = urlParams.get('id');
 
-    fetch("Kayla Ahrndt- DSC 2030 Digital Repository Data.json")
+    fetch("collection.json")
         .then(response => response.json())
         .then(data => {
-            const recipe = data.find(recipe => recipe.id === recipeId);
+            const recipe = data.find(r => r['RECIPE NAME'] === recipeName);
             if (recipe) {
 
                 // Update visible page content
@@ -47,3 +47,5 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Error loading JSON:", error));
 });
+
+
