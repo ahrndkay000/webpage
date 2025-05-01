@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "archivedAt": recipe.source,
                     "accessMode": recipe.energy,
                     "@type": "Thing",
-                    "image": images/${recipe.image},
+                    "image": images/${recipe.image}
                 };
 
                 // Insert JSON-LD into the <head> of the document
