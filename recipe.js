@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "recipeCategory": recipe["MEAL TYPE"],
                     "totalTime": `${recipe["COOKING TIME (MINUTES)"]} minutes`,
                     "image": recipe["IMAGE"],
-                    "url": window.location.href,
+                    "url": window.location.href, // get the current URL of the page that is loaded in the browser
                     "mainEntityOfPage": window.location.href,
                     "nutrition": {
                         "@type": "NutritionInformation",
