@@ -11,8 +11,8 @@ there's often much that I have to scroll through to find the things that matter 
 - RECIPE NAME
 - INGREDIENTS
 - COOKING TIME (MINUTES)
-- ENERGY/DIFFICULTY (1-5)
-- COST ESTIMATE ($-$$$)
+- ENERGY/DIFFICULTY (1 - 5)
+- COST ESTIMATE ($ - $$$)
 - MEAL TYPE
 - PRIMARY NUTRIENTS
 - SOURCE
